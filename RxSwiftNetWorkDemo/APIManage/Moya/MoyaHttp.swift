@@ -32,6 +32,7 @@ public struct MoyaHttp<T: TargetType> {
             parameterEncoding: target.parameterEncoding,
             httpHeaderFields: nil)
         return endpoint
+        
     }
     
 }
