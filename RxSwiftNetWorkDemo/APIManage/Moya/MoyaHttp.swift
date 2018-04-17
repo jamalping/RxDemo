@@ -10,8 +10,8 @@ import Foundation
 import Moya
 import RxSwift
 
+/// 网络请求类
 public struct MoyaHttp<T: TargetType> {
-    
     /// 发送请求
     func sendRequest() -> RxMoyaProvider<T> {
         return RxMoyaProvider<T>.init(

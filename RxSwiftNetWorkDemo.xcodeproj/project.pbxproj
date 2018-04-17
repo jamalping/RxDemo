@@ -22,6 +22,7 @@
 		F62340A62080B20A007B95A7 /* MoyaHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62340A52080B20A007B95A7 /* MoyaHttp.swift */; };
 		F62340A82080B965007B95A7 /* NetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62340A72080B965007B95A7 /* NetworkActivityPlugin.swift */; };
 		F69E40A32080488600BC13DA /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E40A22080488600BC13DA /* HomeAPI.swift */; };
+		F6CF10512085FF5C003F027B /* HttpLoadServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF10502085FF5C003F027B /* HttpLoadServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		F62340A52080B20A007B95A7 /* MoyaHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaHttp.swift; sourceTree = "<group>"; };
 		F62340A72080B965007B95A7 /* NetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityPlugin.swift; sourceTree = "<group>"; };
 		F69E40A22080488600BC13DA /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
+		F6CF10502085FF5C003F027B /* HttpLoadServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpLoadServer.swift; sourceTree = "<group>"; };
 		FED69B83891DE40D9D10B67E /* Pods-RxSwiftNetWorkDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftNetWorkDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftNetWorkDemoUITests/Pods-RxSwiftNetWorkDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 		02505EA2207F0A3C00735B8E /* RxSwiftNetWorkDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F6CF104F2085FF37003F027B /* Tool */,
 				F62340992080AF84007B95A7 /* APIManage */,
 				02505EA3207F0A3C00735B8E /* AppDelegate.swift */,
 				02505EA5207F0A3C00735B8E /* ViewController.swift */,
@@ -202,6 +205,14 @@
 				F62340A72080B965007B95A7 /* NetworkActivityPlugin.swift */,
 			);
 			path = Moya;
+			sourceTree = "<group>";
+		};
+		F6CF104F2085FF37003F027B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F6CF10502085FF5C003F027B /* HttpLoadServer.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,6 +526,7 @@
 				02505EA6207F0A3C00735B8E /* ViewController.swift in Sources */,
 				02505EA4207F0A3C00735B8E /* AppDelegate.swift in Sources */,
 				F69E40A32080488600BC13DA /* HomeAPI.swift in Sources */,
+				F6CF10512085FF5C003F027B /* HttpLoadServer.swift in Sources */,
 				F62340A62080B20A007B95A7 /* MoyaHttp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
