@@ -14,6 +14,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
  
+        self.perform(#selector(ViewController.test), with: nil, afterDelay: 1)
+//        HttpLoadServer.show()
+        self.perform(#selector(ViewController.hidden), with: nil, afterDelay: 7)
+    }
+    
+    @objc func  hidden() -> () {
+        HttpLoadServer.hidden()
+    }
+    
+    @objc func test() -> () {
+      HttpLoadServer.show()
     }
 
     override func didReceiveMemoryWarning() {
