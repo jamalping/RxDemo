@@ -11,14 +11,14 @@ import Moya
 import Result
 
 /// Network activity change notification type.
-public enum XYJNetworkActivityChangeType {
+public enum NetworkActivityChangeType {
     case began, ended
 }
 
 /// Notify a request's network activity changes (request begins or ends).
-public final class XYJNetworkActivityPlugin: PluginType {
+public final class NetworkActivityPlugin: PluginType {
     
-    public typealias NetworkActivityClosure = (_ change: XYJNetworkActivityChangeType) -> Void
+    public typealias NetworkActivityClosure = (_ change: NetworkActivityChangeType) -> Void
     let networkActivityClosure: NetworkActivityClosure
     
     public init(networkActivityClosure: @escaping NetworkActivityClosure) {

@@ -11,6 +11,8 @@ import UIKit
 /// 加载中的提示
 public class HttpLoadServer {
     
+    private static let shareInstance = HttpLoadServer()
+    private init(){}
     /// 是否显示
     private var isShow: Bool = false
     
@@ -41,23 +43,23 @@ public class HttpLoadServer {
         return imgView
     }()
     
-    private static let shareInstance = HttpLoadServer()
-    private init(){}
-    
-    
     /// 显示
     static func show() {
         // 正在显示就不显示
         guard !HttpLoadServer.shareInstance.isShow else {
             return
         }
-        
-        HttpLoadServer.shareInstance.isShow = true
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         let loadImgView = HttpLoadServer.shareInstance.loadingImageView
         let bgView = HttpLoadServer.shareInstance.bgView
         let window = HttpLoadServer.shareInstance.window
-        
+        // 当window上面没视图的时候，延迟1秒显示
+        if window.subviews.count == 0 {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1, execute: {
+                self.show()
+            })
+            return
+        }
         loadImgView.animationImages = HttpLoadServer.shareInstance.animalImgs
         
         loadImgView.animationDuration = 2
@@ -67,6 +69,8 @@ public class HttpLoadServer {
         window.addSubview(bgView)
         bgView.center = window.center
         loadImgView.center = bgView.center
+        
+        HttpLoadServer.shareInstance.isShow = true
     }
     
     
@@ -80,6 +84,16 @@ public class HttpLoadServer {
         let bgView = HttpLoadServer.shareInstance.bgView
         loadImgView.removeFromSuperview()
         bgView.removeFromSuperview()
+    }
+    
+    
+    /// 延迟隐藏
+    ///
+    /// - Parameter delay: 延迟时间
+    static func hidden(delay: TimeInterval) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+delay, execute: {
+            self.hidden()
+        })
     }
 }
 

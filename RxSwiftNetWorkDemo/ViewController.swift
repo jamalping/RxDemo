@@ -7,24 +7,20 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
 
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
- 
-        self.perform(#selector(ViewController.test), with: nil, afterDelay: 1)
-//        HttpLoadServer.show()
-        self.perform(#selector(ViewController.hidden), with: nil, afterDelay: 7)
-    }
-    
-    @objc func  hidden() -> () {
-        HttpLoadServer.hidden()
-    }
-    
-    @objc func test() -> () {
-      HttpLoadServer.show()
+        HomeVM().requst().asObservable().subscribe(onNext: { (a) in
+            print(a)
+        }, onError: { (error) in
+            
+        }).disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
